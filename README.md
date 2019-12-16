@@ -1,65 +1,9 @@
-# :alien: Assignment 1 - Help John with Parallel Programming! :fire::dancer:
+# **Assignment 1**
 
-![image](https://www.ictshore.com/wp-content/uploads/2018/03/py0009-00-Python_threading_tutorial.png)
+In assignment number 1, we are supposed to help John by doing his two tasks: one to reduce the time of his task in which he was supposed to download 1000 images from imgur, for this purpose we have to first get the client id in order to download the image from imgur.com. The Postman app is used to create a client id. After creating the client id, we have to download images from imgur by using John's codes. By doing so, it took 13 minutes and 57 seconds but as this is I/O bound operation, so threading is  supposed to reduce the time therefore when I used my code for multithreading on the same machine it reduces walltime to 2 minutes 29 seconds.
 
-John is a data engineer who works at Lola Inc. He wants to download some pictures from internet, and resize them, however, his process takes a lot of time as the number of images increases. He asks your help, to speed up his process.
+Again, for resizing, John's code to resize 1000 images took 10.1seconds as it is CPU bound process and it is suggested to use multiprocessing to reduce the time, so I used multiprocessing which took only 5.42seconds on the same machine. 
 
-## The Goal
+For multithreading, I used threading module and defined a function worker and ran the code using 10 workers. The different numbers for worker are tried but with downloading 1000 images I reached the maximum downloading images. The worker 10 was found best among the other tries. For multiprocessing, I used "multiprocessing" module and used 10 pools and it ran the 10 parallel processing to perform the same task. The other pool size less than 10 and more than 10 were also used but the performance was found best with minimum time for pool 10.
 
-The goal is to achieve concurrent programming using Python. This project shows you the two ways of parallelising tasks, in which you have to improve the speed of the serial-programming application by using threading and/ or multiprocessing.
-
-Things to remember, 
-
-1. IO bound operations requires threading
-2. CPU bound operations requires multiprocessing
-
-There are many options for multithreading and multiprocessing. You are more than welcome to choose any of those libraries including the standard packages. My advise is to test diffrent ones, so that you will cover more.
-
-Some of these packages are, but not limited to:
-
-- [Ray](https://github.com/ray-project/ray)
-- [Numba](http://numba.pydata.org/)
-- [Modin](https://github.com/modin-project/modin)
-- [Dask](https://dask.org/)
-- [multiprocessing](https://docs.python.org/3.8/library/multiprocessing.html)
-- [threading](https://docs.python.org/3.8/library/threading.html)
-- [concurrent.futures](https://docs.python.org/3.8/library/concurrent.futures.html)
-
-These packages have advantages and disadvantages, you may look more into examples in internet.
-
-## How to do the Assignment?
-
-Use the link given in the class to create your repository. The link will automatically create a repository for you with this assignment template, so you may proceed to the following list.
-
-The same procedure for [welcome](https://github.com/spu-bigdataanalytics/welcome) assignment remains the same, where you have to rename this file as Instructions.md, and create a new README.md file with your own description. In this description, you may explain which methods you choose and why, you can give more examples, and explain how the code you wrote works. Remember, the purpose of this file is afterall for other people to understand what you have done with your project! Plus, without README.md, you may not get a full grade.
-
-1. Get an Imgur api key. Follow instructions [here](https://apidocs.imgur.com/?version=latest#intro).
-2. Install requirements.txt in your environment. (`pip install -r requirements.txt`)
-3. Launch Jupyter Notebook.
-4. Do assignment!
-5. Write an authentic README.md.
-
-
-## What are all these other files?
-
-Following table is will give it a meaning for each file.
-
-File | Description |
----- | ----------- |
-README.md ** | A descriptive file to give an introduction of current project/ assignment. 
-Instructions.md ** | A copy of current README.md file. 
-LICENCE ** | The licence of the file that every project should have.
-.gitignore | The file to control which files should be ignored by Git.
-images | The downloads folder of where your hw downloads the images to.
-requirements.txt | The packages needed to run this project. You may use `pip` to install these packages.
-config.txt | This file is your configuration file. Imgur needs Client ID key to be provided. Put your key in this file.
-utils.py | The helper module that John uses to complete the task.
-Assignment1.ipynb | The assignment notebook. You will find more instructions in this assignment.
-
-
-## How to submit the assignment?
-
-Submit is very easy! You just have to do two things.
-
-1. You have to do your latest commit before the deadline!
-2. After you finish, download a zip copy of your project, upload it to Blackboard!
+For I/O bound operation multithreading and for CPU bound operation multiprocessing reduced the time significantly. Images and resized images can not be uploaded in Github due to the restriction on number of files that should be less than 100.
