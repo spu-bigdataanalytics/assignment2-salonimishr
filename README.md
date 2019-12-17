@@ -1,6 +1,6 @@
-# **Assignment 1**
+# **Assignment 2**
 
-In assignment number 1, we are supposed to help John by doing his two tasks: one to reduce the time of his task in which he was supposed to download 1000 images from imgur, for this purpose we have to first get the client id in order to download the image from imgur.com. The Postman app is used to create a client id. After creating the client id, we have to download images from imgur by using John's codes. By doing so, it took 4 minutes and 41 seconds but as this is I/O bound operation, so threading is  supposed to reduce the time therefore when I used my code for multithreading on the same machine it reduces walltime to 1 minute 33 seconds.
+In this assignment, we are supposed to help John by doing his two tasks: one to reduce the time of his task in which he was supposed to download 1000 images from imgur, for this purpose we have to first get the client id in order to download the image from imgur.com. The Postman app is used to create a client id. After creating the client id, we have to download images from imgur by using John's codes. By doing so, it took 4 minutes and 41 seconds but as this is I/O bound operation, so threading is  supposed to reduce the time therefore when I used my code for multithreading on the same machine it reduces walltime to 1 minute 33 seconds.
 
 Again, for resizing, John's code to resize 1004 images took 23.8 seconds as it is CPU bound process and it is suggested to use multiprocessing to reduce the time, so I used multiprocessing which took only 13.6 seconds on the same machine. 
 
